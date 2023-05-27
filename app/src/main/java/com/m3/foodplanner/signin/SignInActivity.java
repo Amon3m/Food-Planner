@@ -2,6 +2,7 @@ package com.m3.foodplanner.signin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,8 @@ public class SignInActivity extends AppCompatActivity {
     TextView signInFacebook;
     TextView passwordForget;
     ProgressDialog progressDialog;
+    SharedPreferences sharedPreferences;
+
 
     String emailRegex ="^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
             + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
@@ -58,6 +61,16 @@ public class SignInActivity extends AppCompatActivity {
         signInFacebook=findViewById(R.id.loginWithFacebook);
         passwordForget=findViewById(R.id.forget_password);
         progressDialog=new ProgressDialog(this);
+//shP
+        sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        if (isLoggedIn) {
+            // User is already logged in
+            goToHome(firebaseUser);
+            finish(); // Optional: Close the SignInActivity
+        }
+
 
         //firebase us/ps
         firebaseAuth=FirebaseAuth.getInstance();
@@ -121,6 +134,10 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                            editor.putBoolean("isLoggedIn", true);
+                            editor.apply();
                             progressDialog.dismiss();
 
                             firebaseUser= firebaseAuth.getCurrentUser();
@@ -150,6 +167,10 @@ public class SignInActivity extends AppCompatActivity {
     private void goToHome(FirebaseUser user) {
         Intent intent = new Intent( this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("isLoggedIn", true);
+        editor.apply();
+
         startActivity(intent);
     }
 
@@ -187,6 +208,11 @@ public class SignInActivity extends AppCompatActivity {
 //                        firebaseUser.updateProfile(profileUpdates);
                         progressDialog.dismiss();
                         Toast.makeText(SignInActivity.this, "sign in is successful", Toast.LENGTH_SHORT).show();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("email", email);
+                        editor.putString("password", password);
+                        editor.putBoolean("isLoggedIn", true);
+                        editor.apply();
                         goToHome(firebaseUser);
                     }
                     else {

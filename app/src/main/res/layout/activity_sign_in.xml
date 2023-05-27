@@ -80,7 +80,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_background"
-        android:drawableLeft="@drawable/profile"
+        android:drawableLeft="@drawable/message_icon"
         android:drawablePadding="8dp"
         android:fontFamily="sans-serif-light"
         android:hint="@string/email"

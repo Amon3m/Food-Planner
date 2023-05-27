@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">Food Planner</string>
+    <string name="app_name">Dish Dash</string>
+    <string name="slogan">    Dash into Flavorful Delights with DishDash\nYour Ultimate Food Companion</string>
+    <string name="app_con_name">DishDash</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favourite">Favourite</string>
+
+    <string name="user">User</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="onB2">DishDash is Where Your \nComfort Food Lives</string>
+    <string name="onB1_2">Unlock the Full Potential of Your \n Kitchen with Food Planner!</string>
+    <string name="onB2_2">Here You Can find a chef or dish for every\n taste and color. Enjoy!</string>
+    <string name="next">Next</string>
+    <string name="onB1_1">Find your\nComfort Food here</string>
+    <string name="onB1_3">Discover a World of Flavors with Dish Dash!</string>
+
+    <string name="login">Login</string>
+    <string name="or_continue_with">Or Continue With</string>
+    <string name="password">Password</string>
+    <string name="login_to_your_account">Login To Your Account</string>
+    <string name="forgot_your_password">Forgot Your Password?</string>
+    <string name="sign_up_q">Sign Up?</string>
+    <string name="email">Email</string>
+    <string name="sign_up_for_free">Sign Up For Free</string>
+    <string name="user_name">User Name</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

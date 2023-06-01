@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialogue_st"
+    android:foreground="@drawable/background_image">
+
+    <Button
+        android:id="@+id/saturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/saturday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintEnd_toEndOf="@+id/monday"
+        app:layout_constraintStart_toStartOf="@+id/monday"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/sunday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintBottom_toBottomOf="@+id/saturday"
+        app:layout_constraintEnd_toEndOf="@+id/tuesday"
+        app:layout_constraintStart_toStartOf="@+id/tuesday"
+        app:layout_constraintTop_toTopOf="@+id/saturday" />
+
+    <Button
+        android:id="@+id/monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/monday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintEnd_toEndOf="@+id/wednesday"
+        app:layout_constraintStart_toStartOf="@+id/wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/saturday" />
+
+    <Button
+        android:id="@+id/tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/tuesday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintBottom_toBottomOf="@+id/monday"
+        app:layout_constraintEnd_toEndOf="@+id/thursday"
+        app:layout_constraintStart_toStartOf="@+id/thursday"
+        app:layout_constraintTop_toTopOf="@+id/monday" />
+
+    <Button
+        android:id="@+id/wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/wednesday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monday" />
+
+    <Button
+        android:id="@+id/thursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="32dp"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/thursday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintBottom_toBottomOf="@+id/wednesday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wednesday"
+        app:layout_constraintTop_toTopOf="@+id/wednesday" />
+
+    <Button
+        android:id="@+id/friday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="20dp"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="@string/friday"
+        android:textColor="#FBFBFB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/thursday"
+        app:layout_constraintStart_toStartOf="@+id/wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/wednesday" />
+</androidx.constraintlayout.widget.ConstraintLayout>

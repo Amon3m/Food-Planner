@@ -26,4 +26,19 @@
     <string name="sign_up_for_free">Sign Up For Free</string>
     <string name="user_name">User Name</string>
     <string name="sign_up">Sign Up</string>
+    <string name="reset_your_password_here">Reset your password here</string>
+    <string name="rest">rest</string>
+    <string name="enter_your_email_to_reset_your_password">Enter your email to reset your password</string>
+    <string name="daily_inspiration">Daily Inspiration</string>
+    <string name="taste_of_the_globe_culinary_delights_from_every_corner">Taste of the Globe: Culinary Delights from Every Corner</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="saturday">Saturday</string>
+    <string name="monday">Monday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="friday">Friday</string>
+    <string name="sunday">Sunday</string>
+    <string name="thursday">Thursday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="the_culinary_canvas_masterpieces_by_category">The Culinary Canvas: Masterpieces by Category</string>
 </resources>

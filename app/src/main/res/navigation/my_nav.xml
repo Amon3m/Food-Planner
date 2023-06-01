@@ -7,22 +7,76 @@
 
     <fragment
         android:id="@+id/favFragment"
-        android:name="com.m3.foodplanner.FavFragment"
+        android:name="com.m3.foodplanner.fav.view.FavFragment"
         android:label="@string/favourite"
-        tools:layout="@layout/fragment_fav" />
+        tools:layout="@layout/fragment_fav" >
+        <action
+            android:id="@+id/action_favFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.m3.foodplanner.HomeFragment"
+        android:name="com.m3.foodplanner.home.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mealsListFragment"
+            app:destination="@id/mealsListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.m3.foodplanner.SearchFragment"
+        android:name="com.m3.foodplanner.search.view.SearchFragment"
         android:label="@string/search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_mealsListFragment"
+            app:destination="@id/mealsListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userFragment"
         android:name="com.m3.foodplanner.UserFragment"
         android:label="@string/user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.m3.foodplanner.meal.view.MealDetailsFragment"
+        android:label="fragment_meal_details"
+        tools:layout="@layout/fragment_meal_details" >
+        <argument
+            android:name="idMeal"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isLocal"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealsListFragment"
+        android:name="com.m3.foodplanner.MealsList.view.MealsListFragment"
+        android:label="fragment_meals_list"
+        tools:layout="@layout/fragment_meals_list" >
+        <argument android:name="countryName"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_mealsListFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+        <argument
+            android:name="catStr"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.m3.foodplanner.calender.view.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_calendarFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
 </navigation>

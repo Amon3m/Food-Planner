@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.m3.foodplanner.signin.SignInActivity;
+import com.m3.foodplanner.signin.view.SignInActivity;
 
 public class OnboardingTwoActivity extends AppCompatActivity {
     Button myButton;

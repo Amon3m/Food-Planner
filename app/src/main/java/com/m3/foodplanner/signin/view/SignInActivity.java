@@ -1,4 +1,4 @@
-package com.m3.foodplanner.signin;
+package com.m3.foodplanner.signin.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,12 +13,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +25,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.m3.foodplanner.ForgetPasswordActivity;
 import com.m3.foodplanner.MainActivity;
 import com.m3.foodplanner.R;
 import com.m3.foodplanner.signup.view.SignUpActivity;
@@ -58,7 +57,6 @@ public class SignInActivity extends AppCompatActivity {
         emailEdit=findViewById(R.id.sign_in_email_edit_text);
         passwordEdit=findViewById(R.id.sign_in_password_edit_text);
         signInGoogle=findViewById(R.id.loginWithGoogle);
-        signInFacebook=findViewById(R.id.loginWithFacebook);
         passwordForget=findViewById(R.id.forget_password);
         progressDialog=new ProgressDialog(this);
 //shP
@@ -110,6 +108,15 @@ public class SignInActivity extends AppCompatActivity {
                 startActivityForResult(signInIntent,RC_SIGN_IN);
             }
         });
+        passwordForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( SignInActivity.this, ForgetPasswordActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
     }
     public void onActivityResult(int requestCode,int resultCode,Intent data) {
 
@@ -155,14 +162,9 @@ public class SignInActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
     }
-
-
-
-
-
-
-
 
     private void goToHome(FirebaseUser user) {
         Intent intent = new Intent( this, MainActivity.class);
@@ -173,15 +175,6 @@ public class SignInActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-
-
-
-
-
-
-
-
-
 
 
     private void performLogin() {
@@ -202,10 +195,7 @@ public class SignInActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-//                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-//                                .setDisplayName(userName)
-//                                .build();
-//                        firebaseUser.updateProfile(profileUpdates);
+
                         progressDialog.dismiss();
                         Toast.makeText(SignInActivity.this, "sign in is successful", Toast.LENGTH_SHORT).show();
                         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -227,5 +217,4 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    }
-
+}

@@ -1,4 +1,4 @@
-package com.m3.foodplanner.model;
+package com.m3.foodplanner.signup.model;
 
 public class SignUpModel {
     public SignUpModel(String userName, String email) {

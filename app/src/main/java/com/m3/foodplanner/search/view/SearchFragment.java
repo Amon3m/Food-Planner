@@ -150,7 +150,12 @@ public class SearchFragment extends Fragment implements SearchViewInterface,OnCa
 
     @Override
     public void onMealSearchedClick(SearchedMeals meal) {
+        SearchFragmentDirections.ActionSearchFragmentToMealDetailsFragment action=
+                SearchFragmentDirections.actionSearchFragmentToMealDetailsFragment(meal.getIdMeal());
 
-
+        Navigation.findNavController(rootView).navigate(action);
+//        HomeFragmentDirections.ActionHomeFragmentToMealsListFragment action =
+//                HomeFragmentDirections.actionHomeFragmentToMealsListFragment(meal.getStrArea());
+//        Navigation.findNavController(rootView).navigate(action);
     }
 }

@@ -79,7 +79,6 @@ public class MealPresenter implements NetworkDelegate,MealPresenterInterface {
 
     private ArrayList<Ingredient> getIngredient(SelectedMealsItem selectedMealsItem) {
         ArrayList<Ingredient> myIngredientList = new ArrayList<>();
-
         for (int i = 1; i <= 20; i++) {
             String ingredient = null;
             try {
@@ -138,7 +137,6 @@ public class MealPresenter implements NetworkDelegate,MealPresenterInterface {
     @Override
     public ArrayList<Ingredient> getLocalIngredient(LocalFavMeal LocalFavMeal) {
         ArrayList<Ingredient> myIngredientList = new ArrayList<>();
-        if (LocalFavMeal != null) {
         for (int i = 1; i <= 20; i++) {
             String ingredient = null;
             try {
@@ -152,7 +150,7 @@ public class MealPresenter implements NetworkDelegate,MealPresenterInterface {
             } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
                 e.printStackTrace();
             }
-        }}
+        }
 
         return myIngredientList;
     }

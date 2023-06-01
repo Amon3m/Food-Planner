@@ -16,6 +16,11 @@ public interface MealPresenterInterface {
     public LiveData<LocalFavMeal> getSelectedMealLocal(String mealId);
     ArrayList<Ingredient> getLocalIngredient(LocalFavMeal selectedMealsItem);
 
+    LiveData<LocalMealsWeek> getSelectedDayMeal(String id);
+    ArrayList<Ingredient> getLocalweekIngredient(LocalMealsWeek localMealsWeek);
+
+
+
     void  addDayMeal(LocalMealsWeek mealsWeek);
 
 

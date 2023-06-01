@@ -209,6 +209,8 @@ public class CalendarFragment extends Fragment implements CalendarViewInterface 
         CalendarFragmentDirections.ActionCalendarFragmentToMealDetailsFragment action=
                 CalendarFragmentDirections.actionCalendarFragmentToMealDetailsFragment(meal.getMealID());
         action.setIsLocal(true);
+        action.setIsWeek(true);
+
 
 
         Navigation.findNavController(rootView).navigate(action);

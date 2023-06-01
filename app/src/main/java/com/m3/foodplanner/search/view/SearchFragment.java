@@ -121,10 +121,7 @@ public class SearchFragment extends Fragment implements SearchViewInterface,OnCa
                 SearchFragmentDirections.actionSearchFragmentToMealsListFragment("",item.getStrCategory());
               Navigation.findNavController(rootView).navigate(action);
 
-//        HomeFragmentDirections.ActionHomeFragmentToMealsListFragment action =
-//                HomeFragmentDirections.actionHomeFragmentToMealsListFragment(meal.getStrArea());
-//        Navigation.findNavController(rootView).navigate(action);
-
+//
     }
 
     @Override
@@ -154,8 +151,6 @@ public class SearchFragment extends Fragment implements SearchViewInterface,OnCa
                 SearchFragmentDirections.actionSearchFragmentToMealDetailsFragment(meal.getIdMeal());
 
         Navigation.findNavController(rootView).navigate(action);
-//        HomeFragmentDirections.ActionHomeFragmentToMealsListFragment action =
-//                HomeFragmentDirections.actionHomeFragmentToMealsListFragment(meal.getStrArea());
-//        Navigation.findNavController(rootView).navigate(action);
+//
     }
 }

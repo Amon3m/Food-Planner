@@ -56,6 +56,10 @@
             android:name="isLocal"
             app:argType="boolean"
             android:defaultValue="false" />
+        <argument
+            android:name="isWeek"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/mealsListFragment"

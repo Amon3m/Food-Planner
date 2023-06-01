@@ -156,6 +156,33 @@ public class MealPresenter implements NetworkDelegate,MealPresenterInterface {
     }
 
     @Override
+    public LiveData<LocalMealsWeek> getSelectedDayMeal(String id) {
+        return repoInterface.getSelectedDayMeal(id);
+    }
+
+    @Override
+    public ArrayList<Ingredient> getLocalweekIngredient(LocalMealsWeek localMealsWeek) {
+        ArrayList<Ingredient> myIngredientList = new ArrayList<>();
+        for (int i = 1; i <= 20; i++) {
+            String ingredient = null;
+            try {
+                ingredient = (String) localMealsWeek.getClass().getMethod("getStrIngredien" + i).invoke(localMealsWeek);
+
+                String measure = (String) localMealsWeek.getClass().getMethod("getStrMeasure" + i).invoke(localMealsWeek);
+
+                if (ingredient != null && !ingredient.isEmpty() && measure != null && !measure.isEmpty()) {
+                    myIngredientList.add(new Ingredient(ingredient, measure));
+                }
+            } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return myIngredientList;
+    }
+
+
+    @Override
     public void addDayMeal(LocalMealsWeek mealsWeek) {
         repoInterface.insertDayMeal(mealsWeek);
     }

@@ -97,6 +97,8 @@ public class MealDetailsFragment extends Fragment implements MealDetailsViewInte
 
         mealID=MealDetailsFragmentArgs.fromBundle(getArguments()).getIdMeal();
         Boolean isLocal=MealDetailsFragmentArgs.fromBundle(getArguments()).getIsLocal();
+        Boolean isWeek=MealDetailsFragmentArgs.fromBundle(getArguments()).getIsWeek();
+
         Log.e("isLocal hii",isLocal.toString());
 
         Log.e("newhii from onv",mealID);
@@ -106,6 +108,40 @@ public class MealDetailsFragment extends Fragment implements MealDetailsViewInte
             addBtn.setVisibility(View.INVISIBLE);
             favBtn.setEnabled(false);
             favBtn.setVisibility(view.INVISIBLE);
+            if (isWeek){
+                presenter.getSelectedDayMeal(mealID).observe(getViewLifecycleOwner(), new Observer<LocalMealsWeek>() {
+                    @Override
+                    public void onChanged(LocalMealsWeek mealsWeek) {
+                        ArrayList<Ingredient> ingredient= presenter.getLocalweekIngredient(mealsWeek);
+                        String resMealTitle=mealsWeek.getStrMeal();
+                        String resMealInstructions=mealsWeek.getStrInstructions();
+                        String resMealImg=mealsWeek.getStrMealThumb();
+
+                        mealTitle.setText(resMealTitle);
+
+                        mealIns.setText(resMealInstructions);
+                        Glide.with(getContext())
+                                .load(resMealImg)
+                                .into(mealImage);
+                        String youtubeLink = mealsWeek.getStrYoutube();
+                        // String youtubeVideoId=getYoutubeVideoId(youtubeLink);
+                        String youtubeVideoId=youtubeLink;
+
+                        youtubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                            @Override
+                            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                                youTubePlayer.loadVideo(youtubeLink, 0);
+                                youTubePlayer.pause();
+                            }
+                        });
+
+                        adapter.setList(ingredient);
+
+                    }
+                });
+
+            }else {
+
             presenter.getSelectedMealLocal(mealID).observe(getViewLifecycleOwner(), new Observer<LocalFavMeal>() {
                 @Override
                 public void onChanged(LocalFavMeal localFavMeal) {
@@ -137,7 +173,7 @@ public class MealDetailsFragment extends Fragment implements MealDetailsViewInte
                     adapter.setList(ingredient);
 
                 }
-            });
+            });}
         }else {
         presenter.getSelectedMeal(mealID);
         presenter.getMeal();}

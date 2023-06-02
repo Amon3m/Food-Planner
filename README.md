@@ -21,7 +21,13 @@ The DishDash Android app follows the MVP (Model-View-Presenter) pattern for orga
 
 ## Screenshots
 
-Insert relevant screenshots here.
+![photo1685722039](https://github.com/Amon3m/Food-Planner/assets/112562093/d3b81dfd-bd77-40bd-9373-7ff888fd3eeb)
+![photo1685722039 (5)](https://github.com/Amon3m/Food-Planner/assets/112562093/8620c28c-ae4c-45c5-a9e6-7ba0d01c4ad0)
+![photo1685722039 (4)](https://github.com/Amon3m/Food-Planner/assets/112562093/40a04a70-971e-466a-ac03-11b33026adac)
+![photo1685722039 (3)](https://github.com/Amon3m/Food-Planner/assets/112562093/4e2b3cf3-21da-4112-8f43-ab2f218cdf9f)
+![photo1685722039 (2)](https://github.com/Amon3m/Food-Planner/assets/112562093/7ffb66b7-9d17-4fa1-b395-7d6b65d080ac)
+![photo1685722039 (1)](https://github.com/Amon3m/Food-Planner/assets/112562093/ebed9d08-3aa4-40cc-9d25-5f96ffd405da)
+
 
 ## Installation
 
@@ -30,7 +36,7 @@ To run the DishDash Android app on your device, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/username/dishdash.git
+   git clone https://github.com/Amon3m/Food-Planner.git
    ```
 
 2. Open the project in Android Studio.
@@ -91,6 +97,5 @@ dependencies {
 - This app uses data from [MealDB API](https://www.themealdb.com/api.php).
 - Special thanks to the open-source community for their contributions.
 
----
 
-Note: Please make sure to replace the placeholders (`username`, `demo.gif`, screenshots, etc.) with actual values and files specific to your DishDash Android app repository.
+

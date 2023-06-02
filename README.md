@@ -17,7 +17,7 @@ DishDash is an Android mobile application that helps users plan their weekly mea
 
 ## Architecture
 
-The DishDash Android app follows the MVP (Model-View-Presenter) pattern for organizing its components and implements the repository pattern for data management. It also utilizes the Navigation component from the Android Jetpack library for navigation between different screens and fragments.
+The DishDash Android app follows the MVP (Model-View-Presenter) pattern for organizing its components and implements the repository pattern for data management. It also utilizes the Navigation component from the Android Jetpack library for navigation between different screens and fragments also utilizes Retrofit for handling network requests and API communication.
 
 ## Screenshots
 

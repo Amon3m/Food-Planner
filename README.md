@@ -95,7 +95,7 @@ dependencies {
 ## Acknowledgments
 
 - This app uses data from [MealDB API](https://www.themealdb.com/api.php).
-- Special thanks to the open-source community for their contributions.
+
 
 
 
